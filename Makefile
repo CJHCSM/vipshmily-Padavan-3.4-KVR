@@ -42,12 +42,7 @@ build: toolchain/download
 	$(MAKE) -C $(SOURCE_DIR)
 
 clean:
-	@if [ ! -f $(CONFIG) ]; then \
-		echo "Project config file .config not found! Terminate."; \
-		exit 1; \
-	fi
-	$(MAKE) -C $(SOURCE_DIR) clean
-	@rm -f $(CONFIG)
+	@(cd $(SOURCE_DIR); ./clear_tree; rm -f $(CONFIG))
 
 .PHONY: $(PRODUCTS)
 $(PRODUCTS):
