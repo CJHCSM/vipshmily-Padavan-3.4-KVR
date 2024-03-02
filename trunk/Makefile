@@ -163,7 +163,7 @@ subdirs: libs
 
 .PHONY: config dep
 config:
-	@echo "\033[37;44m   $@   \033[0m"
+	@echo "\033[41;1m $@ \033[0m"
 	@./configure
 ifeq ($(CONFIG_CCACHE),y)
 	@mkdir -p $(CONFIG_CROSS_COMPILER_ROOT)/lib/ccache
